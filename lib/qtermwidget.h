@@ -176,6 +176,8 @@ public:
      */
     int getPtySlaveFd() const;
 
+    void kill();
+
 signals:
     void finished();
     void copyAvailable(bool);

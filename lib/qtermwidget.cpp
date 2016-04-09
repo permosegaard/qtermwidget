@@ -641,3 +641,8 @@ int QTermWidget::getPtySlaveFd() const
 {
     return m_impl->m_session->getPtySlaveFd();
 }
+
+void QTermWidget::kill()
+{
+    m_impl->m_session->close();
+}
