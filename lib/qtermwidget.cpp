@@ -644,5 +644,6 @@ int QTermWidget::getPtySlaveFd() const
 
 void QTermWidget::kill()
 {
-    m_impl->m_session->close();
+    QList<TerminalDisplay *> views = m_impl->m_session->views();
+    for ( int i = 0; i < views.size(); i++ ) { m_impl->m_session->removeView( views.at( i ) ); }
 }
